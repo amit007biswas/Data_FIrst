@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Code_FIrst.Models.CustClass>
+@{
+    ViewData["Title"] = "Index";
+    //Pager pager = new Pager();
+    //int pageNo = 0;
+    //if (ViewBag.Pager != null)
+    //{
+    //    pager = ViewBag.Pager;
+    //    pageNo = pager.Currentpage;
+    //}
+}
+@*@using PagedList.Mvc;
+    @using PagedList;*@
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    @*@using (Html.BeginForm("index", "cusSearch", FormMethod.Get))
+        {
+            <input type="text" name=" search" placeholder="Enter employee Name " />
+            <input type="submit" name=" submit" value="Search" />
+        }*@
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.userid)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Confirmpwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <h2>
+                No records found !
+            </h2>
+        }
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.userid)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pwd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Confirmpwd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.userid }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.userid }, new { @class = "btn btn-success " }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.userid }, new { @class = "btn btn-danger" })
+                    </td>*@
+            </tr>
+        }
+
+</table>
+
+
+@*<partial name="_Pager" model="@pager" />*@

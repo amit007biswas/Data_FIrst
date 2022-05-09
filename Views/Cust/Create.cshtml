@@ -1,0 +1,59 @@
+﻿@model Code_FIrst.Models.CustClass
+
+
+@{
+    //Layout = null;
+    ViewData["Title"] = "Create";
+
+}
+<h1>Customer Registration </h1>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="pwd" class="control-label"></label>
+                <input asp-for="pwd" class="form-control" type="password" />
+                <span asp-validation-for="pwd" class="text-danger">
+
+                </span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Confirmpwd" class="control-label"></label>
+                <input asp-for="Confirmpwd" class="form-control" type="password" />
+                <span asp-validation-for="Confirmpwd" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" type="tel" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save Customer Record" class="btn  btn-primary" />
+            </div>
+            <b>
+                @ViewBag.message
+            </b>
+        </form>
+    </div>
+
+</div>
